@@ -27,25 +27,15 @@ $(document).ready(function(e){
 			<legend>Display name</legend>
 		<?php foreach((array)$details as $row):?>
 				   <div class="control-group">
-				<label class="control-label" for="input01"><?php echo $row->lang_name?></label>
+				<label class="control-label" for="input01"><?php echo $row['lang_name']?></label>
 				<div class="controls">
-					<input type="hidden" value="<?php echo $row->lang_id?>" name="lang_id[]">
-					<input type="hidden" value="<?php echo $row->lang_name?>"
+					<input type="hidden" value="<?php echo $row['lang_id']?>" name="lang_id[]">
+					<input type="hidden" value="<?php echo $row['lang_name']?>"
 						name="lang_name[]"> <input type="text" class="input-xlarge"
-						name="display_name[]" value="<?php echo $row->display_name?>">
+						name="display_name[]" value="<?php echo $row['display_name']?>">
 				</div>
 			</div>	 
-		<?php endforeach;?>
-		<?php foreach ($langs as $lang):?>
-		      <div class="control-group">
-					<label class="control-label" for="input01"><?php echo $lang['name']?></label>					
-					<div class="controls">
-					    <input type="hidden" value="<?php echo $lang['id']?>" name="lang_id[]">
-					    <input type="hidden" value="<?php echo $lang['name']?>" name="lang_name[]">
-						<input type="text" class="input-xlarge" name="display_name[]">
-					</div>
-				</div>	 
-		<?php endforeach;?>						
+		<?php endforeach;?>					
 	</div>
 	</div>
 	<button type="submit" class="btn btn-primary pull-right">Update</button>
